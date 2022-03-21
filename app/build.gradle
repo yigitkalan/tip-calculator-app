@@ -10,6 +10,7 @@ android {
         viewBinding true
     }
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.example.tipcalculator"
         minSdk 26
         targetSdk 32
