@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
             NumberFormat.getCurrencyInstance()
             val formattedTip=NumberFormat.getCurrencyInstance().format(tipAmount)
-            bind.tipAmount.setText(formattedTip)
+            bind.tipAmount.setText("Tip amount : " + formattedTip)
         }
 
     }
