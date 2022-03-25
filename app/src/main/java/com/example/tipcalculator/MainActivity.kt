@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
             val idOfSelection = bind.tipOptions.checkedRadioButtonId
 
             val percentage = when(idOfSelection){
-                bind.option1.id -> 0.2
-                bind.option2.id -> 0.15
-                else -> 0.1
+                bind.option1.id -> 0.185
+                bind.option2.id -> 0.135
+                else -> 0.085
             }
             var tipAmount = percentage*costOfService
             val round = bind.roundSwitch.isChecked
