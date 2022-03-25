@@ -1,161 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
 
 
-    <RadioGroup
-        android:id="@+id/tipOptions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363">
-
-        <RadioButton
-            android:id="@+id/option1"
+        <RadioGroup
+            android:id="@+id/tipOptions"
+            android:layout_marginStart="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Awsome (%18.5)"></RadioButton>
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.193"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question"
+            app:layout_constraintVertical_bias="0.03">
 
-        <RadioButton
-            android:id="@+id/option2"
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Awsome (%18.5)"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Mediocre (%13.5)"></RadioButton>
+            <!--In below code we can specify style of a view
+             different from what is in themes.xml file-->
+            <RadioButton
+                android:id="@+id/option3"
+                style="@style/Widget.TipCalculator.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Bad (%8.5)"></RadioButton>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/calculateButton"
+
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:text="Calculate"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roundSwitch"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <TextView
+            android:id="@+id/tipAmount"
+            style="@style/Widget.TipCalculator.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Mediocre (%13.5)"></RadioButton>
-        <!--In below code we can specify style of a view
-         different from what is in themes.xml file-->
-        <RadioButton
-            style="@style/Widget.TipCalculator.CompoundButton.RadioButton"
-            android:id="@+id/option3"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:hint="Tip amount : "
+            android:textAlignment="center"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calculateButton"
+            app:layout_constraintVertical_bias="0.0"></TextView>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/roundSwitch"
+            style="@style/Widget.TipCalculator.CompoundButton.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:layout_marginTop="16dp"
+            android:text="Round up Tip ?"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipOptions"
+            app:layout_constraintVertical_bias="0.025" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/roundSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/roundSwitch"
+            app:layout_constraintVertical_bias="0.636"
+            app:srcCompat="@drawable/ic_round_up" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@+id/question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/question"
+            app:srcCompat="@drawable/ic_waiter" />
+
+        <TextView
+            android:id="@+id/question"
+            style="@style/Widget.TipCalculator.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="Bad (%8.5)"></RadioButton>
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="40dp"
+            android:text="How was the service ?"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textArea"
+            app:layout_constraintVertical_bias="0.006"></TextView>
 
-    </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textArea"
+            android:layout_width="232dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="40dp"
+            android:hint="Cost of Service"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.059">
 
-    <Button
-        android:id="@+id/calculateButton"
-        android:layout_width="349dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:text="Calculate"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+            <EditText
+                android:id="@+id/text1"
+                android:layout_width="190dp"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteX="170dp"
+                tools:layout_editor_absoluteY="dp"></EditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/tipAmount"
-        style="@style/Widget.TipCalculator.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Tip amount : "
-        android:textAlignment="center"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"></TextView>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@+id/textArea"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textArea"
+            app:layout_constraintVertical_bias="0.433"
+            app:srcCompat="@drawable/ic_service" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/roundSwitch"
-        style="@style/Widget.TipCalculator.CompoundButton.Switch"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:checked="true"
-        android:minHeight="48dp"
-        android:text="Round up Tip ?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/roundSwitch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/roundSwitch"
-        app:layout_constraintVertical_bias="0.636"
-        app:srcCompat="@drawable/ic_round_up" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/question"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/question"
-        app:srcCompat="@drawable/ic_waiter" />
-
-    <TextView
-        android:id="@+id/question"
-        style="@style/Widget.TipCalculator.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="How was the service ?"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205"></TextView>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textArea"
-        android:layout_width="232dp"
-        android:layout_height="58dp"
-        android:hint="Cost of Service"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.37"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065">
-
-        <EditText
-            android:id="@+id/text1"
-            android:layout_width="191dp"
-            android:layout_height="match_parent"
-            android:inputType="numberDecimal"
-            tools:ignore="SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteX="170dp"
-            tools:layout_editor_absoluteY="-4dp"></EditText>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/textArea"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textArea"
-        app:layout_constraintVertical_bias="0.433"
-        app:srcCompat="@drawable/ic_service" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
