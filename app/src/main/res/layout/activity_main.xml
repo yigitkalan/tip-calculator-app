@@ -22,20 +22,19 @@
 
         <RadioButton
             android:id="@+id/option1"
-            style="@style/Widget.TipCalculator.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Awsome (%18.5)"></RadioButton>
 
         <RadioButton
-            style="@style/Widget.TipCalculator.CompoundButton.RadioButton"
             android:id="@+id/option2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Mediocre (%13.5)"></RadioButton>
-
+        <!--In below code we can specify style of a view
+         different from what is in themes.xml file-->
         <RadioButton
             style="@style/Widget.TipCalculator.CompoundButton.RadioButton"
             android:id="@+id/option3"
@@ -86,7 +85,7 @@
         android:text="Round up Tip ?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572" />
@@ -96,9 +95,7 @@
         
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="-8dp"
         app:layout_constraintBottom_toBottomOf="@+id/roundSwitch"
-        app:layout_constraintEnd_toStartOf="@+id/roundSwitch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/roundSwitch"
         app:layout_constraintVertical_bias="0.636"
@@ -108,10 +105,8 @@
         android:id="@+id/imageView2"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="-8dp"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@+id/question"
-        app:layout_constraintEnd_toStartOf="@+id/question"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/question"
         app:srcCompat="@drawable/ic_waiter" />
@@ -125,15 +120,15 @@
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.205"></TextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textArea"
-        android:layout_width="234dp"
-        android:layout_height="54dp"
+        android:layout_width="232dp"
+        android:layout_height="58dp"
         android:hint="Cost of Service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,10 +151,8 @@
         android:id="@+id/imageView"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="-8dp"
         android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@+id/textArea"
-        app:layout_constraintEnd_toStartOf="@+id/textArea"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textArea"
         app:layout_constraintVertical_bias="0.433"
