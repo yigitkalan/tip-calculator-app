@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- When we do this it will apply for all the views in the app whether we specify it or not-->
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="radioButtonStyle">@style/Widget.TipCalculator.CompoundButton.RadioButton</item>
         <item name="switchStyle">@style/Widget.TipCalculator.CompoundButton.Switch</item>
