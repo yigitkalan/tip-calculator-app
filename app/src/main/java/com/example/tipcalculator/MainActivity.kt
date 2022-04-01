@@ -3,9 +3,7 @@ package com.example.tipcalculator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tipcalculator.databinding.ActivityMainBinding
-import java.lang.NumberFormatException
 import java.text.NumberFormat
-import kotlin.math.cos
 
 class MainActivity : AppCompatActivity() {
 
